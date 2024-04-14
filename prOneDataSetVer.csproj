@@ -55,18 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="AuthorsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Bookspage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="GenresPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -75,19 +63,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AuthorsPage.xaml.cs">
-      <DependentUpon>AuthorsPage.xaml</DependentUpon>
+    <Compile Include="booksDataSet.cs">
+      <DependentUpon>booksDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="booksDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>booksDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Bookspage.xaml.cs">
-      <DependentUpon>Bookspage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GenresPage.xaml.cs">
-      <DependentUpon>GenresPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

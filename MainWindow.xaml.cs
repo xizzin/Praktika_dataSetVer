@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,29 +24,19 @@ namespace prOneDataSetVer
     public partial class MainWindow : Window
     {
 
-        
+        BooksTableAdapter Books = new BooksTableAdapter();
         public MainWindow()
         {
             InitializeComponent();
+            BooksMainGrid.ItemsSource = Books.GetEverything();
         }
 
-        private void OneButton_Click(object sender, RoutedEventArgs e)
+        private void DoAfterLoad(object sender, RoutedEventArgs e) 
         {
-            AuthorsPage authorsPage = new AuthorsPage();
-            AuthorsFrame.Content = authorsPage;
-        }
+            BooksMainGrid.Columns[0].Visibility = Visibility.Collapsed;
+            BooksMainGrid.Columns[2].Visibility = Visibility.Collapsed;
+            BooksMainGrid.Columns[3].Visibility = Visibility.Collapsed;
 
-        private void TwoButton_Click(object sender, RoutedEventArgs e)
-        {
-            GenresPage genresPage = new GenresPage();
-            GenresFrame.Content = genresPage;
         }
-
-        private void ThreeButton_Click(object sender, RoutedEventArgs e)
-        {
-            Bookspage booksPage = new Bookspage();  
-            BooksFrame.Content = booksPage;
-        }
-
     }
 }
