@@ -1708,15 +1708,8 @@ SELECT ID_Authors, Author_name, Author_Secondname FROM Authors WHERE (ID_Authors
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT [Authors].[Author_name],  [Authors].[Author_Secondname]
-AS result
-FROM [Authors]
-WHERE [Authors].[Author_name] LIKE '%' + @SearchSymbols + '%'
-UNION 
-SELECT [Authors].[Author_name],  [Authors].[Author_Secondname]
-AS result
-FROM [Authors]
-WHERE [Authors].[Author_Secondname] LIKE '%' + @SearchSymbols + '%'";
+            this._commandCollection[1].CommandText = "SELECT *\r\nFROM [Authors]\r\nWHERE (([Authors].[Author_name] LIKE \'%\' + @SearchSymbo" +
+                "ls + \'%\') OR ([Authors].[Author_Secondname] LIKE \'%\' + @SearchSymbols + \'%\'))";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SearchSymbols", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Author_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,9 +29,15 @@ namespace prOneDataSetVer
             AuthorsGrid.ItemsSource = Authors.GetData();
         }
 
+        private void DoAfterLoad(object sender, RoutedEventArgs e)
+        {
+            AuthorsGrid.Columns[0].Visibility = Visibility.Collapsed;
+
+        }
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             AuthorsGrid.ItemsSource = Authors.SearchAuthors(SearchBar.Text);
+            AuthorsGrid.Columns[0].Visibility = Visibility.Collapsed;
         }
     }
 }
