@@ -2084,7 +2084,7 @@ SELECT ID_Books, Books_name, Authors_ID, Genres_ID FROM Books WHERE (ID_Books = 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_Books, Books_name, Authors_ID, Genres_ID FROM dbo.Books";
@@ -2114,6 +2114,20 @@ SELECT ID_Books, Books_name, Authors_ID, Genres_ID FROM Books WHERE (ID_Books = 
                 ".[Author_Secondname] LIKE \'%\' + @SearchSymbols + \'%\'\r\n";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SearchSymbols", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Books_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT [Books].ID_Books, [Books].[Books_name],
+[Books].Genres_ID, [Genres].[Genre_name],
+[Books].Authors_ID, [Authors].[Author_name] + ' ' +
+	[Authors].[Author_Secondname]
+FROM [Books]
+INNER JOIN [Genres] 
+ON [Books].[Genres_ID] = [Genres].[ID_Genres] 
+INNER JOIN [Authors] 
+ON [Books].[Authors_ID] = [Authors].[ID_Authors]
+WHERE [Authors_ID] = @ID_authors";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_authors", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Authors_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2152,6 +2166,18 @@ SELECT ID_Books, Books_name, Authors_ID, Genres_ID FROM Books WHERE (ID_Books = 
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(SearchSymbols));
             }
+            booksDataSet.BooksDataTable dataTable = new booksDataSet.BooksDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual booksDataSet.BooksDataTable SearchBooksByAuthorID(int ID_authors) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID_authors));
             booksDataSet.BooksDataTable dataTable = new booksDataSet.BooksDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

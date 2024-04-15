@@ -21,6 +21,7 @@ namespace prOneDataSetVer
     public partial class AuthorsPage : Page
     {
         AuthorsTableAdapter Authors = new AuthorsTableAdapter();
+
         public AuthorsPage()
         {
             InitializeComponent();

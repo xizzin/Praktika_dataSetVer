@@ -11,6 +11,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Grid>
@@ -21,6 +22,14 @@
             <TextBox x:Name="SearchBar" Grid.Column="0" Background="#FFBDA8C5"/>
             <Button x:Name="SearchButton" Grid.Column="1" Content="Искать" FontFamily="Bahnschrift Condensed" FontSize="36" Click="SearchButton_Click"/>
         </Grid>
-        <DataGrid x:Name="BooksGrid" Grid.Row="1"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="Combo" Grid.Column="0" SelectionChanged="Combo_SelectionChanged"/>
+            <Button x:Name="Очистить"  Grid.Column="1" Content="Очистить" FontFamily="Bahnschrift Condensed" FontSize="36" Click="Очистить_Click"/>
+        </Grid>
+        <DataGrid x:Name="BooksGrid" Grid.Row="2" Height="310" VerticalAlignment="Center"/>
     </Grid>
 </Page>

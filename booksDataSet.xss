@@ -7,19 +7,23 @@
 <DiagramLayout xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ex:showrelationlabel="False" ViewPortX="0" ViewPortY="0" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:Authors" ZOrder="5" X="349" Y="70" Height="181" Width="274" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
-    <Shape ID="DesignTable:Books" ZOrder="4" X="70" Y="70" Height="204" Width="263" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
+    <Shape ID="DesignTable:Books" ZOrder="4" X="70" Y="70" Height="227" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
     <Shape ID="DesignTable:Genres" ZOrder="3" X="349" Y="298" Height="158" Width="268" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK__Books__Authors_I__4D94879B" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>349</X>
-          <Y>149</Y>
+          <X>387</X>
+          <Y>251</Y>
         </Point>
         <Point>
-          <X>333</X>
-          <Y>149</Y>
+          <X>387</X>
+          <Y>268</Y>
+        </Point>
+        <Point>
+          <X>370</X>
+          <Y>268</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -35,7 +39,7 @@
         </Point>
         <Point>
           <X>262</X>
-          <Y>274</Y>
+          <Y>297</Y>
         </Point>
       </RoutePoints>
     </Connector>
