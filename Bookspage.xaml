@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:prOneDataSetVer"
       mc:Ignorable="d" 
+      Loaded= "DoAfterLoad"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Bookspage">
 
@@ -30,6 +31,15 @@
             <ComboBox x:Name="Combo" Grid.Column="0" SelectionChanged="Combo_SelectionChanged"/>
             <Button x:Name="Очистить"  Grid.Column="1" Content="Очистить" FontFamily="Bahnschrift Condensed" FontSize="36" Click="Очистить_Click"/>
         </Grid>
-        <DataGrid x:Name="BooksGrid" Grid.Row="2" Height="310" VerticalAlignment="Center"/>
+        <DataGrid x:Name="BooksGrid" Grid.Row="2" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Books_ID}"/>
+                <DataGridTextColumn Binding="{Binding Books_name}" Header="Название произведения"/>
+                <DataGridTextColumn Binding="{Binding Authors_ID}"/>
+                <DataGridTextColumn Binding="{Binding Genres_ID}"/>
+                <DataGridTextColumn Binding="{Binding Genre_name}" Header="Жанр произведения"/>
+                <DataGridTextColumn Binding="{Binding Column1}" Header="Автор/авторка произведения"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>
