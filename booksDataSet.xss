@@ -8,10 +8,10 @@
   <Shapes>
     <Shape ID="DesignTable:Authors" ZOrder="2" X="561" Y="51" Height="181" Width="274" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
     <Shape ID="DesignTable:Books" ZOrder="1" X="70" Y="70" Height="250" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
-    <Shape ID="DesignTable:Genres" ZOrder="5" X="349" Y="298" Height="158" Width="268" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
+    <Shape ID="DesignTable:Genres" ZOrder="3" X="349" Y="298" Height="158" Width="268" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
   </Shapes>
   <Connectors>
-    <Connector ID="DesignRelation:FK__Books__Authors_I__4D94879B" ZOrder="4" LineWidth="11">
+    <Connector ID="DesignRelation:FK__Books__Authors_I__4D94879B" ZOrder="5" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>599</X>
@@ -27,7 +27,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK__Books__Genres_ID__4E88ABD4" ZOrder="3" LineWidth="11">
+    <Connector ID="DesignRelation:FK__Books__Genres_ID__4E88ABD4" ZOrder="4" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>349</X>

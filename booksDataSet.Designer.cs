@@ -1708,12 +1708,12 @@ SELECT ID_Authors, Author_name, Author_Secondname FROM Authors WHERE (ID_Authors
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT [Authors].ID_Authors, [Authors].[Author_name],  [Authors].[Author_Secondname]
+            this._commandCollection[1].CommandText = @"SELECT [Authors].[Author_name],  [Authors].[Author_Secondname]
 AS result
 FROM [Authors]
 WHERE [Authors].[Author_name] LIKE '%' + @SearchSymbols + '%'
 UNION 
-SELECT [Authors].ID_Authors, [Authors].[Author_name],  [Authors].[Author_Secondname]
+SELECT [Authors].[Author_name],  [Authors].[Author_Secondname]
 AS result
 FROM [Authors]
 WHERE [Authors].[Author_Secondname] LIKE '%' + @SearchSymbols + '%'";
@@ -2104,27 +2104,17 @@ ON [Books].[Authors_ID] = [Authors].[ID_Authors]
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT [Books].ID_Books, [Books].[Books_name],\r\n[Books].Genres_ID, [Genres].[Genr" +
-                "e_name],\r\n[Books].Authors_ID, [Authors].[Author_name] + \' \' +\r\n\t[Authors].[Autho" +
-                "r_Secondname]\r\nAS result \r\nFROM [Books]\r\nINNER JOIN [Genres] \r\nON [Books].[Genre" +
-                "s_ID] = [Genres].[ID_Genres] \r\nINNER JOIN [Authors] \r\nON [Books].[Authors_ID] = " +
-                "[Authors].[ID_Authors]\r\nWHERE [Books].[Books_name] LIKE \'%\' + @SearchSymbols + \'" +
-                "%\'\r\nUNION \r\nSELECT [Books].ID_Books, [Books].[Books_name],\r\n[Books].Genres_ID, [" +
-                "Genres].[Genre_name],\r\n[Books].Authors_ID, [Authors].[Author_name] + \' \' +\r\n\t[Au" +
-                "thors].[Author_Secondname]\r\nAS result \r\nFROM [Books]\r\nINNER JOIN [Genres] \r\nON [" +
-                "Books].[Genres_ID] = [Genres].[ID_Genres] \r\nINNER JOIN [Authors] \r\nON [Books].[A" +
-                "uthors_ID] = [Authors].[ID_Authors]\r\nWHERE [Genres].[Genre_name] LIKE \'%\' + @Sea" +
-                "rchSymbols + \'%\'\r\nUNION\r\nSELECT [Books].ID_Books, [Books].[Books_name],\r\n[Books]" +
-                ".Genres_ID, [Genres].[Genre_name],\r\n[Books].Authors_ID, [Authors].[Author_name] " +
-                "+ \' \' +\r\n\t[Authors].[Author_Secondname]\r\nAS result \r\nFROM [Books]\r\nINNER JOIN [G" +
-                "enres] \r\nON [Books].[Genres_ID] = [Genres].[ID_Genres] \r\nINNER JOIN [Authors] \r\n" +
-                "ON [Books].[Authors_ID] = [Authors].[ID_Authors]\r\nWHERE [Authors].[Author_name] " +
-                "LIKE \'%\' + @SearchSymbols + \'%\'\r\nUNION\r\nSELECT [Books].ID_Books, [Books].[Books_" +
-                "name],\r\n[Books].Genres_ID, [Genres].[Genre_name],\r\n[Books].Authors_ID, [Authors]" +
-                ".[Author_name] + \' \' +\r\n\t[Authors].[Author_Secondname]\r\nAS result \r\nFROM [Books]" +
-                "\r\nINNER JOIN [Genres] \r\nON [Books].[Genres_ID] = [Genres].[ID_Genres] \r\nINNER JO" +
-                "IN [Authors] \r\nON [Books].[Authors_ID] = [Authors].[ID_Authors]\r\nWHERE [Authors]" +
-                ".[Author_Secondname] LIKE \'%\' + @SearchSymbols + \'%\'\r\n";
+            this._commandCollection[2].CommandText = @"SELECT [Books].ID_Books, [Books].[Books_name],
+[Books].Genres_ID, [Genres].[Genre_name],
+[Books].Authors_ID, [Authors].[Author_name] + ' ' +
+	[Authors].[Author_Secondname] 
+FROM [Books]
+INNER JOIN [Genres] 
+ON [Books].[Genres_ID] = [Genres].[ID_Genres] 
+INNER JOIN [Authors] 
+ON [Books].[Authors_ID] = [Authors].[ID_Authors]
+WHERE (([Books].[Books_name] LIKE '%' + @SearchSymbols + '%') OR ([Genres].[Genre_name] LIKE '%' + @SearchSymbols + '%') OR ([Authors].[Author_name] LIKE '%' + @SearchSymbols + '%') OR ([Authors].[Author_Secondname] LIKE '%' + @SearchSymbols + '%'))
+";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SearchSymbols", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Books_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
