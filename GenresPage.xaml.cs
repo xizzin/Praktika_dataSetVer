@@ -44,6 +44,8 @@ namespace prOneDataSetVer
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
             GenresGrid.ItemsSource = Genres.GetData();
+            GenreInput.Clear();
+            SearchBar.Clear();
         }
 
         //done
@@ -80,7 +82,6 @@ namespace prOneDataSetVer
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            object ChangeID = (GenresGrid.SelectedItem as DataRowView).Row[0];
             string ForCheck = GenreInput.Text;
             if (ForCheck.Any(data => string.IsNullOrEmpty(ForCheck)))
             {
@@ -114,6 +115,19 @@ namespace prOneDataSetVer
             object DeletionID = (GenresGrid.SelectedItem as DataRowView).Row[0];
             Genres.DeleteFromGenresByID(Convert.ToInt32(DeletionID));
             MessageBox.Show("Данные успешно удалены!");
+        }
+
+        private void GenresGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (GenresGrid.SelectedItem != null) 
+            {
+                string Selectedgenre = (string)(GenresGrid.SelectedItem as DataRowView).Row[1];
+                GenreInput.Text = Selectedgenre;
+            }
+            else
+            {
+
+            }
         }
     }
 }

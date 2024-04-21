@@ -21,13 +21,18 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="0.5*"/>
             </Grid.ColumnDefinitions>
             <TextBox x:Name="SearchBar" Grid.Column="0" Grid.Row="0" Background="#FFBDA8C5" FontFamily="Bahnschrift Condensed" FontSize="20"/>
-            <Button x:Name="SearchButton" Grid.Column="1" Grid.Row="0" Content="Искать" FontFamily="Bahnschrift Condensed" FontSize="20" Click="SearchButton_Click"/>
-            <Button x:Name="UpdateButton" Grid.Column="2" Content="Обновить ДБ" FontFamily="Bahnschrift Condensed" FontSize="20" Click="UpdateButton_Click" />
+            <ComboBox x:Name="GenreID_ComboMain" Grid.Column="1" FontFamily="Bahnschrift Condensed" FontSize="20" SelectionChanged="GenreID_ComboMain_SelectionChanged"/>
+            <ComboBox x:Name="AuthorID_ComboMain" Grid.Column="2" FontFamily="Bahnschrift Condensed" FontSize="20" SelectionChanged="AuthorID_ComboMain_SelectionChanged"/>
+            <Button x:Name="SearchButton" Grid.Column="3" Grid.Row="0" Content="Искать" FontFamily="Bahnschrift Condensed" FontSize="20" Click="SearchButton_Click"/>
+            <Button x:Name="UpdateButton" Grid.Column="4" Content="Обновить ДБ" FontFamily="Bahnschrift Condensed" FontSize="20" Click="UpdateButton_Click" />
+            <Border BorderThickness="3" BorderBrush="#210866" Grid.Column="0"  Grid.ColumnSpan="4"/>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -36,6 +41,7 @@
             </Grid.ColumnDefinitions>
             <Button x:Name="AddButton" Grid.Row="2" Grid.Column="0" Content="Добавить" FontFamily="Bahnschrift Condensed" FontSize="20" Click="AddButton_Click"/>
             <Button x:Name="ChangeButton" Grid.Row="2" Grid.Column="1" Content="Изменить" FontFamily="Bahnschrift Condensed" FontSize="20" Click="ChangeButton_Click"/>
+            <Border BorderThickness="3,3,3,0" BorderBrush="#E2B5A7" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
         </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -59,10 +65,11 @@
         </Grid>
         <Grid Grid.Row="4">
             <Button x:Name="DeleteButton" Content="Удалить" FontFamily="Bahnschrift Condensed" FontSize="20" Click="DeleteButton_Click" />
+            <Border BorderThickness="3,0,3,3" BorderBrush="#E2B5A7" />
         </Grid>
 
         <Grid Grid.Row="5">
-            <DataGrid x:Name="BooksGrid" Grid.Row="2" AutoGenerateColumns="False">
+            <DataGrid x:Name="BooksGrid" Grid.Row="2" AutoGenerateColumns="False" SelectionChanged="BooksGrid_SelectionChanged" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Books_ID}"/>
                     <DataGridTextColumn Binding="{Binding Books_name}" Header="Название произведения"/>

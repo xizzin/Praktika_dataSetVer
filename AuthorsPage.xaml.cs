@@ -74,12 +74,9 @@ namespace prOneDataSetVer
                 AuthorsGrid.ItemsSource = Authors.GetData();
             }
         }
-        //done!!
-        // make Capitalize!!!! after everything tho
+
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            //создаем лист для имени и фамилии чтобы удобно потом проверить на пустоту с помощью одного линкью запроса (archive for the future)
-            //var AuthorInputData = new List<TextBox> { NameInput, SecondNameInput };
 
             // создаем стринг для комбинирования текстов обоих вводов для прогона символов через бул запрещенных символов.
             string ForCheck = NameInput.Text + SecondNameInput.Text;
@@ -126,6 +123,20 @@ namespace prOneDataSetVer
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
             AuthorsGrid.ItemsSource = Authors.GetData();
+            NameInput.Clear();
+            SecondNameInput.Clear();
+            SearchBar.Clear();
+        }
+
+        private void AuthorsGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (AuthorsGrid.SelectedItem != null) 
+            {
+                string SelectedName = (string)(AuthorsGrid.SelectedItem as DataRowView).Row[1];
+                NameInput.Text = SelectedName;
+                string SelectedSEcondName = (string)(AuthorsGrid.SelectedItem as DataRowView).Row[2];
+                SecondNameInput.Text = SelectedSEcondName;
+            }
         }
     }
 }

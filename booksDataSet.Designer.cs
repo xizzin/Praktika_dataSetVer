@@ -2209,7 +2209,7 @@ SELECT ID_Books, Books_name, Authors_ID, Genres_ID FROM Books WHERE (ID_Books = 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[9];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_Books, Books_name, Authors_ID, Genres_ID FROM dbo.Books";
@@ -2271,13 +2271,47 @@ WHERE [Books].[Authors_ID] = @input ";
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@input", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Authors_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "UPDATE [Books] \r\nSET [Books_name] = @name, [Authors_ID] = @authors_ID, [Genres_ID" +
-                "] = @genres_ID \r\nWHERE ([Books].[ID_Books] = @Original_ID_Books) ";
+            this._commandCollection[6].CommandText = @"SELECT [Books].ID_Books, [Books].[Books_name],
+[Books].Genres_ID, [Genres].[Genre_name],
+[Books].Authors_ID, [Authors].[Author_name] + ' ' +
+	[Authors].[Author_Secondname] 
+FROM [Books]
+INNER JOIN [Genres] 
+ON [Books].[Genres_ID] = [Genres].[ID_Genres] 
+INNER JOIN [Authors] 
+ON [Books].[Authors_ID] = [Authors].[ID_Authors]
+WHERE (([Books].[Books_name] LIKE '%' + @SearchSymbols + '%')
+ OR ([Genres].[Genre_name] LIKE '%' + @SearchSymbols + '%') 
+OR ([Authors].[Author_name] LIKE '%' + @SearchSymbols + '%')
+ OR ([Authors].[Author_Secondname] LIKE '%' + @SearchSymbols + '%') 
+OR ([Books].[Genres_ID] = @genreID) OR ([Books].[Authors_ID] = @authorID))";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Books_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@authors_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Authors_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@genres_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Genres_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Books", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Books", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SearchSymbols", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Books_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@genreID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Genres_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@authorID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Authors_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = @"SELECT [Books].ID_Books, [Books].[Books_name],
+[Books].Genres_ID, [Genres].[Genre_name],
+[Books].Authors_ID, [Authors].[Author_name] + ' ' +
+	[Authors].[Author_Secondname] 
+FROM [Books]
+INNER JOIN [Genres] 
+ON [Books].[Genres_ID] = [Genres].[ID_Genres] 
+INNER JOIN [Authors] 
+ON [Books].[Authors_ID] = [Authors].[ID_Authors]
+WHERE ([Books].[Genres_ID] = @genreID) ";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@genreID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Genres_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = "UPDATE [Books] \r\nSET [Books_name] = @name, [Authors_ID] = @authors_ID, [Genres_ID" +
+                "] = @genres_ID \r\nWHERE ([Books].[ID_Books] = @Original_ID_Books) ";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Books_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@authors_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Authors_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@genres_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Genres_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Books", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Books", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2339,6 +2373,37 @@ WHERE [Books].[Authors_ID] = @input ";
         public virtual booksDataSet.BooksDataTable SearchBooksByAuthorID(int input) {
             this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(input));
+            booksDataSet.BooksDataTable dataTable = new booksDataSet.BooksDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual booksDataSet.BooksDataTable SearchBooksByEverything(string SearchSymbols, int genreID, int authorID) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((SearchSymbols == null)) {
+                throw new global::System.ArgumentNullException("SearchSymbols");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(SearchSymbols));
+            }
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(genreID));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(authorID));
+            booksDataSet.BooksDataTable dataTable = new booksDataSet.BooksDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual booksDataSet.BooksDataTable SearchBooksByGenreID(int genreID) {
+            this.Adapter.SelectCommand = this.CommandCollection[7];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(genreID));
             booksDataSet.BooksDataTable dataTable = new booksDataSet.BooksDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -2539,7 +2604,7 @@ WHERE [Books].[Authors_ID] = @input ";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateBooksByID(string name, int authors_ID, int genres_ID, int Original_ID_Books) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }

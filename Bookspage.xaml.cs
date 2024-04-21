@@ -41,9 +41,13 @@ namespace prOneDataSetVer
 
             GenreID_Combo.ItemsSource = Genres.GetData();
             GenreID_Combo.DisplayMemberPath = "Genre_name";
+            GenreID_ComboMain.ItemsSource = Genres.GetData();
+            GenreID_ComboMain.DisplayMemberPath = "Genre_name";
 
             AuthorID_Combo.ItemsSource = Authors.GetData();
             AuthorID_Combo.DisplayMemberPath = "Author_Secondname";
+            AuthorID_ComboMain.ItemsSource = Authors.GetData();
+            AuthorID_ComboMain.DisplayMemberPath = "Author_Secondname";
         }
 
 
@@ -51,17 +55,20 @@ namespace prOneDataSetVer
         {
             BooksGrid.ItemsSource = Books.SearchBooks(SearchBar.Text);
         }
-
-        //done
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-            BooksGrid.ItemsSource = Books.GetData();
+            BooksGrid.ItemsSource = Books.GetEverything();
+            SearchBar.Clear();
+            BookInput.Clear();
+            GenreID_Combo.SelectedItem = null;
+            GenreID_Combo.SelectedItem = null;
+            AuthorID_Combo.SelectedItem = null;
+            AuthorID_ComboMain.SelectedItem = null;
         }
 
         //done
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            object ChangeID = (BooksGrid.SelectedItem as DataRowView).Row[0];
             string ForCheck = BookInput.Text;
             if (ForCheck.Any(data => string.IsNullOrEmpty(ForCheck)) && !(GenreID_Combo.SelectedItem != null) && !(AuthorID_Combo.SelectedItem != null))
             {
@@ -79,23 +86,23 @@ namespace prOneDataSetVer
                     }
                     else
                     {
-                        var Author_ID = (AuthorID_Combo.SelectedItem as DataRowView).Row[0];
-                        var Genre_ID = (GenreID_Combo.SelectedItem as DataRowView).Row[0];
-                        Books.InsertIntoBooks(BookInput.Text, Convert.ToInt32(Genre_ID), Convert.ToInt32(Genre_ID));
+                        int Author_ID = (int)(AuthorID_Combo.SelectedItem as DataRowView).Row[0];
+                        int Genre_ID = (int)(GenreID_Combo.SelectedItem as DataRowView).Row[0];
+                        Books.InsertIntoBooks(BookInput.Text, Author_ID, Genre_ID);
                         MessageBox.Show("Данные успешно сохранены!");
                         break;
                     }
                 }
 
                 BookInput.Clear();
-                BooksGrid.ItemsSource = Books.GetData();
+                BooksGrid.ItemsSource = Books.GetEverything();
             }
         }
         
         //done
         private void ChangeButton_Click(object sender, RoutedEventArgs e)
         {
-            object ChangeID = (BooksGrid.SelectedItem as DataRowView).Row[0];
+            int ChangeID = (int)(BooksGrid.SelectedItem as DataRowView).Row[0];
             string ForCheck = BookInput.Text;
             if (ForCheck.Any(data => string.IsNullOrEmpty(ForCheck)) && !(GenreID_Combo.SelectedItem != null) && !(AuthorID_Combo.SelectedItem != null))
             {
@@ -113,16 +120,16 @@ namespace prOneDataSetVer
                     }
                     else
                     {
-                        var Author_ID = (AuthorID_Combo.SelectedItem as DataRowView).Row[0];
-                        var Genre_ID = (GenreID_Combo.SelectedItem as DataRowView).Row[0];
-                        Books.UpdateBooksByID(BookInput.Text, Convert.ToInt32(Author_ID), Convert.ToInt32(Genre_ID), Convert.ToInt32(Genre_ID));
+                        int Author_ID = (int)(AuthorID_Combo.SelectedItem as DataRowView).Row[0];
+                        int Genre_ID = (int)(GenreID_Combo.SelectedItem as DataRowView).Row[0];
+                        Books.UpdateBooksByID(BookInput.Text, Author_ID, Genre_ID, ChangeID);
                         MessageBox.Show("Данные успешно изменены!");
                         break;
                     }
                 }
 
                 BookInput.Clear();
-                BooksGrid.ItemsSource = Books.GetData();
+                BooksGrid.ItemsSource = Books.GetEverything();
             }
         }
 
@@ -132,7 +139,42 @@ namespace prOneDataSetVer
             object DeletionID = (BooksGrid.SelectedItem as DataRowView).Row[0];
             Books.DeleteFromBooksByID(Convert.ToInt32(DeletionID));
             MessageBox.Show("Данные успешно удалены!");
-            BooksGrid.ItemsSource = Books.GetData();
+            BooksGrid.ItemsSource = Books.GetEverything();
+        }
+
+        private void BooksGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (BooksGrid.SelectedItem != null)
+            {
+                string SelectedName = (string)(BooksGrid.SelectedItem as DataRowView).Row[1];
+                BookInput.Text = SelectedName;
+                int SelectedAuthorID = (int)(BooksGrid.SelectedItem as DataRowView).Row[2]-1;
+                AuthorID_Combo.SelectedIndex = SelectedAuthorID;
+                int SelectedGenreID = (int)(BooksGrid.SelectedItem as DataRowView).Row[3]-1;
+                GenreID_Combo.SelectedIndex = SelectedGenreID;
+            }
+            else { }
+
+        }
+
+        private void GenreID_ComboMain_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (GenreID_ComboMain.SelectedItem != null)
+            {
+                int Genreid = (int)(GenreID_ComboMain.SelectedItem as DataRowView).Row[0];
+                BooksGrid.ItemsSource = Books.SearchBooksByGenreID(Genreid);
+            }
+               
+        }
+
+        private void AuthorID_ComboMain_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (AuthorID_ComboMain.SelectedItem != null) 
+            {
+                int AuthorID = (int)(AuthorID_ComboMain.SelectedItem as DataRowView).Row[0];
+                BooksGrid.ItemsSource = Books.SearchBooksByAuthorID(AuthorID);
+                AuthorID_ComboMain.SelectedItem = null;
+            }
         }
     }
 }

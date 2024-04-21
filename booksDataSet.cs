@@ -9,3 +9,10 @@
         }
     }
 }
+
+namespace prOneDataSetVer.booksDataSetTableAdapters {
+    
+    
+    public partial class BooksTableAdapter {
+    }
+}
