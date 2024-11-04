@@ -1,0 +1,197 @@
+﻿<Page x:Class="Praktika_5DataSetVer.NoLogin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Praktika_5DataSetVer"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="NoLogin">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="Greetings" Grid.Column="0" FontFamily="Bahnschrift Condensed" FontSize="20" IsReadOnly="True"/>
+            <Button x:Name="Exit" Grid.Column="2" Content="Войти" FontFamily="Bahnschrift Condensed" FontSize="20" Click="Exit_Click"/>
+            <Button x:Name="Clean" Grid.Column="1" Content="Очиситить" FontFamily="Bahnschrift Condensed" FontSize="20"/>
+            <ComboBox x:Name="Ghost" Grid.Column="0" SelectedIndex="-1" IsEnabled="False" Visibility="Collapsed"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="0.4*"/>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="0.2*"/>
+                </Grid.RowDefinitions>
+                <TextBox IsEnabled="False" Text="Анкета для подачи заявки на животное" FontFamily="Bahnschrift Condensed" Grid.Row="0"/>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.4*"/>
+                        <RowDefinition Height="0.4*"/>
+                        <RowDefinition Height="0.4*"/>
+                        <RowDefinition Height="0.4*"/>
+                        <RowDefinition Height="0.4*"/>
+                        <RowDefinition Height="0.4*"/>
+                        <RowDefinition Height="0.4*"/>
+                        <RowDefinition Height="0.6*"/>
+                        <RowDefinition Height="0.4*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.3*"/>
+                            <ColumnDefinition Width="0.3*"/>
+                            <ColumnDefinition Width="0.3*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox IsEnabled="False" Text="Имя" FontFamily="Bahnschrift Condensed" Grid.Column="0"/>
+                        <TextBox IsEnabled="False" Text="Фамилия" FontFamily="Bahnschrift Condensed" Grid.Column="1"/>
+                        <TextBox IsEnabled="False" Text="Отчество (может быть пустым)" FontFamily="Bahnschrift Condensed" Grid.Column="2" TextWrapping="Wrap" FontSize="9"/>
+                        <TextBox IsEnabled="False" Text="Местоимения" FontFamily="Bahnschrift Condensed" Grid.Column="3" FontSize="10"/>
+                        <TextBox IsEnabled="False" Text="Возраст" FontFamily="Bahnschrift Condensed" Grid.Column="4"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.3*"/>
+                            <ColumnDefinition Width="0.3*"/>
+                            <ColumnDefinition Width="0.3*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="PeopleNameInput" Grid.Column="0"/>
+                        <TextBox x:Name="PeopleSecondNameInput" Grid.Column="1"/>
+                        <TextBox x:Name="PeopleThirdNameInput" Grid.Column="2"/>
+                        <TextBox x:Name="PeoplePronouns" Grid.Column="3"/>
+                        <TextBox x:Name="PeopleAge" Grid.Column="4"/>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox IsEnabled="False" Text="Свободное место (кв. м.)" Grid.Column="0" FontFamily="Bahnschrift Condensed"/>
+                        <TextBox IsEnabled="False" Text="Свободное время (ч.)" Grid.Column="1" FontFamily="Bahnschrift Condensed"/>
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="PeopleSpace" Grid.Column="0"/>
+                        <TextBox x:Name="PeopleTime" Grid.Column="1"/>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox IsEnabled="False" Text="Город/Поселок" Grid.Column="0" FontFamily="Bahnschrift Condensed"/>
+                        <TextBox IsEnabled="False" Text="Дети/Без детей" Grid.Column="1" FontFamily="Bahnschrift Condensed"/>
+                        <TextBox IsEnabled="False" Text="Согласие проживающих есть/нет" Grid.Column="2" FontFamily="Bahnschrift Condensed" FontSize="10" TextWrapping="Wrap"/>
+                    </Grid>
+                    <Grid Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="PeopleWhere" Grid.Column="0"/>
+                        <TextBox x:Name="PeopleFamily" Grid.Column="1"/>
+                        <TextBox x:Name="PeopleAgreement" Grid.Column="2"/>
+                    </Grid>
+                    <TextBox IsEnabled="False" Text="Опыт обращения с животными"  FontFamily="Bahnschrift Condensed" Grid.Row="6"/>
+                    <TextBox x:Name="PeopleExp" Grid.Row="7"/>
+                    <Button x:Name="AnketaDone" Grid.Row="8" Content="Отправить данную часть анкеты (после заполнения)" FontFamily="Bahnschrift Condensed" Click="AnketaDone_Click"/>
+                </Grid>
+
+                <TextBox IsReadOnly="True"  Text="Выберите животное/аллергию. Вы можете добавить/отправить несколько аллергий в анкету/заявок. Для отправки заявки нажмите на кнопку добавить/отправить" Grid.Row="2" FontFamily="Bahnschrift Condensed" FontSize="13" TextWrapping="Wrap"/>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="PHAChoice" Grid.Column="0"/>
+                    <Button x:Name="PHAAdd" FontFamily="Bahnschrift Condensed" Content="добавить" Grid.Column="1" Click="PHAAdd_Click"/>
+                </Grid>
+
+                <ComboBox x:Name="AnimalChoiceCombo" Grid.Row="4"/>
+                <Button x:Name="CompleteRequest" Grid.Row="5" Content="Отправить заявку" FontFamily="Bahnschrift Condensed" Click="CompleteRequest_Click"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="0.5*"/>
+
+                </Grid.RowDefinitions>
+                <TextBox Text="Животные" Grid.Row="0" IsEnabled="False"  FontFamily="Bahnschrift Condensed"/>
+                <DataGrid x:Name="AnimalsGrid" IsReadOnly="True" Grid.Row="1" SelectionChanged="AnimalsGrid_SelectionChanged"/>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Text="Вид" IsEnabled="False" Grid.Column="0" FontFamily="Bahnschrift Condensed"/>
+                    <TextBox Text="Порода" IsEnabled="False" Grid.Column="1" FontFamily="Bahnschrift Condensed"/>
+                    <TextBox Text="Имя" IsEnabled="False" Grid.Column="2" FontFamily="Bahnschrift Condensed"/>
+                    <TextBox Text="ФИО отвечающего работника" IsEnabled="False" Grid.Column="3" FontFamily="Bahnschrift Condensed" TextWrapping="Wrap" FontSize="9"/>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="AnimalTypeOutput" IsReadOnly="True" Grid.Column="0" FontFamily="Bahnschrift Condensed"/>
+                    <TextBox x:Name="AnimalSubypeOutput" IsReadOnly="True" Grid.Column="1" FontFamily="Bahnschrift Condensed"/>
+                    <TextBox x:Name="AnimalNameOutput" IsReadOnly="True" Grid.Column="2" FontFamily="Bahnschrift Condensed"/>
+                    <TextBox x:Name="AnimalWorkerOutput" IsReadOnly="True" Grid.Column="3" FontFamily="Bahnschrift Condensed" TextWrapping="Wrap" FontSize="9"/>
+                </Grid>
+                <TextBox IsEnabled="False" Text="Комментарий отвечающего за животное работника" FontFamily="Bahnschrift Condensed" Grid.Row="4"/>
+                <TextBox Grid.Row="5" IsReadOnly="True" x:Name="HandlerCommentOutput" FontFamily="Bahnschrift Condensed"/>
+                <TextBox IsEnabled="False" Text="Дополнительная информация" FontFamily="Bahnschrift Condensed" Grid.Row="6"/>
+                <TextBox Grid.Row="7" IsReadOnly="True" x:Name="ElseOutput" FontFamily="Bahnschrift Condensed"/>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="0.15*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.15*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBox IsReadOnly="True" FontFamily="Bahnschrift Condensed" Text="Для того, чтобы в пунктах ниже появилась инфоромация, выберите животное из таблицы животных" Grid.Row="0" TextWrapping="Wrap" FontSize="13" Foreground="Black"/>
+                <TextBox IsEnabled="False" FontFamily="Bahnschrift Condensed" Text="Журнал вакцинации" Grid.Row="1"/>
+                <DataGrid IsReadOnly="True" x:Name="VaccJourGrid" Grid.Row="2"/>
+                <TextBox IsEnabled="False"  FontFamily="Bahnschrift Condensed" Text="Аллергии животного" Grid.Row="3" />
+                <DataGrid IsReadOnly="True" x:Name="AHAGrid" Grid.Row="4"/>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>

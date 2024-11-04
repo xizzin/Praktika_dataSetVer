@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\xizzi\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\Praktika_5DataSetVer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D344719E-AF47-4A4D-B0F7-73DD30549B1C}|Praktika_5DataSetVer.csproj|c:\\users\\xizzi\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\praktika_5datasetver\\vetpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D344719E-AF47-4A4D-B0F7-73DD30549B1C}|Praktika_5DataSetVer.csproj|solutionrelative:vetpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D344719E-AF47-4A4D-B0F7-73DD30549B1C}|Praktika_5DataSetVer.csproj|C:\\Users\\xizzi\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\Praktika_5DataSetVer\\adminpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D344719E-AF47-4A4D-B0F7-73DD30549B1C}|Praktika_5DataSetVer.csproj|solutionrelative:adminpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D344719E-AF47-4A4D-B0F7-73DD30549B1C}|Praktika_5DataSetVer.csproj|C:\\Users\\xizzi\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\Praktika_5DataSetVer\\adminpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D344719E-AF47-4A4D-B0F7-73DD30549B1C}|Praktika_5DataSetVer.csproj|solutionrelative:adminpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D344719E-AF47-4A4D-B0F7-73DD30549B1C}|Praktika_5DataSetVer.csproj|c:\\users\\xizzi\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\praktika_5datasetver\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D344719E-AF47-4A4D-B0F7-73DD30549B1C}|Praktika_5DataSetVer.csproj|solutionrelative:loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D344719E-AF47-4A4D-B0F7-73DD30549B1C}|Praktika_5DataSetVer.csproj|c:\\users\\xizzi\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\praktika_5datasetver\\animalshelterdataset.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
+      "RelativeMoniker": "D:0:0:{D344719E-AF47-4A4D-B0F7-73DD30549B1C}|Praktika_5DataSetVer.csproj|solutionrelative:animalshelterdataset.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D344719E-AF47-4A4D-B0F7-73DD30549B1C}|Praktika_5DataSetVer.csproj|c:\\users\\xizzi\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\praktika_5datasetver\\handlerspagexaml.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D344719E-AF47-4A4D-B0F7-73DD30549B1C}|Praktika_5DataSetVer.csproj|solutionrelative:handlerspagexaml.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AnimalShelterDataSet.xsd",
+              "DocumentMoniker": "C:\\Users\\xizzi\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\Praktika_5DataSetVer\\AnimalShelterDataSet.xsd",
+              "RelativeDocumentMoniker": "AnimalShelterDataSet.xsd",
+              "ToolTip": "C:\\Users\\xizzi\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\Praktika_5DataSetVer\\AnimalShelterDataSet.xsd",
+              "RelativeToolTip": "AnimalShelterDataSet.xsd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
+              "WhenOpened": "2024-04-24T23:01:47.952Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VetPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\xizzi\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\Praktika_5DataSetVer\\VetPage.xaml.cs",
+              "RelativeDocumentMoniker": "VetPage.xaml.cs",
+              "ToolTip": "C:\\Users\\xizzi\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\Praktika_5DataSetVer\\VetPage.xaml.cs",
+              "RelativeToolTip": "VetPage.xaml.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACwAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T11:27:32.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\xizzi\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\Praktika_5DataSetVer\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "LoginPage.xaml.cs",
+              "ToolTip": "C:\\Users\\xizzi\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\Praktika_5DataSetVer\\LoginPage.xaml.cs",
+              "RelativeToolTip": "LoginPage.xaml.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T11:15:28.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\xizzi\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\Praktika_5DataSetVer\\AdminPage.xaml.cs",
+              "RelativeDocumentMoniker": "AdminPage.xaml.cs",
+              "ToolTip": "C:\\Users\\xizzi\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\Praktika_5DataSetVer\\AdminPage.xaml.cs",
+              "RelativeToolTip": "AdminPage.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T06:07:20.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminPage.xaml",
+              "DocumentMoniker": "C:\\Users\\xizzi\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\Praktika_5DataSetVer\\AdminPage.xaml",
+              "RelativeDocumentMoniker": "AdminPage.xaml",
+              "ToolTip": "C:\\Users\\xizzi\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\Praktika_5DataSetVer\\AdminPage.xaml",
+              "RelativeToolTip": "AdminPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-12T06:07:16.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HandlersPagexaml.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\xizzi\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\Praktika_5DataSetVer\\HandlersPagexaml.xaml.cs",
+              "RelativeDocumentMoniker": "HandlersPagexaml.xaml.cs",
+              "ToolTip": "C:\\Users\\xizzi\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u0430\u043A\u0442\u043E\u0441\\Praktika_5DataSetVer\\HandlersPagexaml.xaml.cs",
+              "RelativeToolTip": "HandlersPagexaml.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T10:14:16.48Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
